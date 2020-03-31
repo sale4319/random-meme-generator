@@ -34,9 +34,9 @@ class MemeGenerator extends Component {
   render() {
     console.log(this.state.font_size);
     return (
-      <Container className="themed-container" fluid={true}>
-        <Row xs="2">
-          <Col>
+      <Container>
+        <Row>
+          <Col xs="auto">
             <div className="meme">
               <h2
                 style={{ fontSize: Number(this.state.font_size) }}
