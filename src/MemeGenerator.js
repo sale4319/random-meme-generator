@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button, Input } from "reactstrap";
 
 class MemeGenerator extends Component {
   constructor() {
@@ -34,32 +35,6 @@ class MemeGenerator extends Component {
     console.log(this.state.font_size);
     return (
       <div>
-        <div className="meme-form">
-          <input
-            type="text"
-            name="topText"
-            placeholder="top text"
-            onChange={this.handleChange}
-            value={this.state.topText}
-          />
-          <br />
-          <input
-            type="text"
-            name="bottomText"
-            placeholder="bottom text"
-            onChange={this.handleChange}
-            value={this.state.bottomText}
-          />
-          <br />
-          <input
-            type="number"
-            name="font_size"
-            placeholder="font size"
-            onChange={this.handleChange}
-            value={this.state.font_size}
-          />
-          <button onClick={this.handleClick}>Generate!</button>
-        </div>
         <div className="meme">
           <h2
             style={{ fontSize: Number(this.state.font_size) }}
@@ -74,6 +49,34 @@ class MemeGenerator extends Component {
           >
             {this.state.bottomText}
           </h2>
+        </div>
+        <div className="meme-form">
+          <Input
+            type="text"
+            name="topText"
+            placeholder="Enter top text"
+            onChange={this.handleChange}
+            value={this.state.topText}
+          />
+
+          <Input
+            type="text"
+            name="bottomText"
+            placeholder="Enter bottom text"
+            onChange={this.handleChange}
+            value={this.state.bottomText}
+          />
+
+          <Input
+            type="number"
+            name="font_size"
+            placeholder="Enter font size"
+            onChange={this.handleChange}
+            value={this.state.font_size}
+          />
+          <Button onClick={this.handleClick} color="danger">
+            Generate!
+          </Button>
         </div>
       </div>
     );
