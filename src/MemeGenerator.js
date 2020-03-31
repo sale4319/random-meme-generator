@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Input } from "reactstrap";
+import { Button, Input, Container, Row, Col } from "reactstrap";
 
 class MemeGenerator extends Component {
   constructor() {
@@ -34,51 +34,56 @@ class MemeGenerator extends Component {
   render() {
     console.log(this.state.font_size);
     return (
-      <div>
-        <div className="meme">
-          <h2
-            style={{ fontSize: Number(this.state.font_size) }}
-            className="top"
-          >
-            {this.state.topText}
-          </h2>
-          <img src={this.state.randomImg} alt="" />
-          <h2
-            style={{ fontSize: Number(this.state.font_size) }}
-            className="bottom"
-          >
-            {this.state.bottomText}
-          </h2>
-        </div>
-        <div className="meme-form">
-          <Input
-            type="text"
-            name="topText"
-            placeholder="Enter top text"
-            onChange={this.handleChange}
-            value={this.state.topText}
-          />
+      <Container className="themed-container" fluid={true}>
+        <Row xs="2">
+          <Col>
+            <div className="meme">
+              <h2
+                style={{ fontSize: Number(this.state.font_size) }}
+                className="top"
+              >
+                {this.state.topText}
+              </h2>
+              <img src={this.state.randomImg} alt="" />
+              <h2
+                style={{ fontSize: Number(this.state.font_size) }}
+                className="bottom"
+              >
+                {this.state.bottomText}
+              </h2>
+            </div>
+          </Col>
+          <Col>
+            <div className="meme-form">
+              <Input
+                type="text"
+                name="topText"
+                placeholder="Enter top text"
+                onChange={this.handleChange}
+                value={this.state.topText}
+              />
 
-          <Input
-            type="text"
-            name="bottomText"
-            placeholder="Enter bottom text"
-            onChange={this.handleChange}
-            value={this.state.bottomText}
-          />
-
-          <Input
-            type="number"
-            name="font_size"
-            placeholder="Enter font size"
-            onChange={this.handleChange}
-            value={this.state.font_size}
-          />
-          <Button onClick={this.handleClick} color="danger">
-            Generate!
-          </Button>
-        </div>
-      </div>
+              <Input
+                type="text"
+                name="bottomText"
+                placeholder="Enter bottom text"
+                onChange={this.handleChange}
+                value={this.state.bottomText}
+              />
+              <Input
+                type="number"
+                name="font_size"
+                placeholder="Enter font size"
+                onChange={this.handleChange}
+                value={this.state.font_size}
+              />
+              <Button onClick={this.handleClick} color="danger">
+                Generate!
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
