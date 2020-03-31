@@ -46,7 +46,7 @@ body {
 .meme-form {
   width: 90%;
   margin: 1.4em 0em 1em 1.4em;
-  display: flex;
+  display: grid;
   justify-content: space-between;
 }
 
